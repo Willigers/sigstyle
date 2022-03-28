@@ -1,0 +1,15 @@
+Package: sigstyle
+Title: Significance style
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Jasper",
+           family = "Willigers",
+           role = c("aut", "cre"),
+           email = "willigers@significance.nl",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Definition of themes and colours for Significance style reports and presentations
+License: use_mit_license()
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
