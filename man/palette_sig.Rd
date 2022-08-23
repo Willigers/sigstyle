@@ -16,6 +16,20 @@ List with color names and hex values
 }
 \description{
 Defines color palettes, e.g. for use in ggplot2 plots.
+All color palettes are based on the colors from the Significance house style Excel template.
+}
+\details{
+Currently available palettes are:
+basic : the 2 colors from the Significance logo. Suitable for category or continuous data.
+main : the standard set of 6 colors in the significance theme. Particularly suitable for category data.
+lighter : the lighter 6 colors in significance theme. Particularly suitable for category data.
+darker : the darker 6 colors in significance theme. Particularly suitable for category data.
+all : all 18 colors in significance theme (main, lighter and darker combined). Particularly suitable for category data.
+posneg : green (positive) and red (negative). Particularly suitable for (binary) category data.
+posnegneut : green (positive), red (negative) and light blue (neutral). Particularly suitable for category data.
+postoneg : green (positive), white (neutral) and red (negative). Particularly suitable for continuous data.
+mintoplus : blue (low), white (neutral) and red (high). Particularly suitable for continuous data.
+intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
 }
 \examples{
 palette_sig("main")

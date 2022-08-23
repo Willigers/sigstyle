@@ -36,7 +36,7 @@ theme_sig <- function(){
       panel.grid.major.y = element_line(size = 0.1, colour = "grey75"),  #format horizontal gridlines
       panel.grid.minor = element_blank(),    #strip minor gridlines
       panel.border = element_blank(),        #strip border around plot
-	  panel.spacing = unit(0.75, "cm"),      #spacing between facets
+      panel.spacing = unit(0.75, "cm"),      #spacing between facets
       axis.line = element_blank(),           #strip axis lines
       axis.ticks = element_blank(),          #strip axis ticks
       plot.margin = unit(c(10,10,10,10), "pt") ,
@@ -48,15 +48,16 @@ theme_sig <- function(){
         hjust = 0.5,              #center align
         vjust = 1,
         margin = margin(t = 0, b = 10, unit = "pt"),               #raise slightly
-		color = "black"),         #title is black
+        color = "black"),         #title is black
       plot.subtitle = element_text(          #subtitle
         family = font,            #font family
         size = 13,                #font size
-		color = "#2c2c2c"),       #subtitle is dark gray
+        color = "#2c2c2c"),       #subtitle is dark gray
 
       plot.caption = element_text(           #caption
         family = font,            #font family
         size = 9,                 #font size
+        margin = margin(t = 5, b = 0, unit = "pt"),
         hjust = 1),               #right align
 
       axis.title = element_text(             #axis titles
@@ -81,7 +82,7 @@ theme_sig <- function(){
         family= font,
         size = 10,
         color = colors_sig("blue"),
-		margin = margin(t = 5, r = 5, b = 5, l = 5, unit = "pt")),  #margin to avoid overlap with plot
+        margin = margin(t = 5, r = 5, b = 5, l = 5, unit = "pt")),  #margin to avoid overlap with plot
       strip.background = element_blank(),
 
       # Legend
