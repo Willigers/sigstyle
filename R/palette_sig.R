@@ -1,6 +1,19 @@
 #' Significance color palettes
 #'
 #' Defines color palettes, e.g. for use in ggplot2 plots.
+#' All color palettes are based on the colors from the Significance house style Excel template.
+#'
+#' Currently available palettes are:
+#' basic : the 2 colors from the Significance logo. Suitable for category or continuous data.
+#' main : the standard set of 6 colors in the significance theme. Particularly suitable for category data.
+#' lighter : the lighter 6 colors in significance theme. Particularly suitable for category data.
+#' darker : the darker 6 colors in significance theme. Particularly suitable for category data.
+#' all : all 18 colors in significance theme (main, lighter and darker combined). Particularly suitable for category data.
+#' posneg : green (positive) and red (negative). Particularly suitable for (binary) category data.
+#' posnegneut : green (positive), red (negative) and light blue (neutral). Particularly suitable for category data.
+#' postoneg : green (positive), white (neutral) and red (negative). Particularly suitable for continuous data.
+#' mintoplus : blue (low), white (neutral) and red (high). Particularly suitable for continuous data.
+#' intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
 #'
 #' @keywords color palette
 #'
@@ -19,20 +32,18 @@ palette_sig <- function(palette = "all", n = 0) {
 
   # Define palettes from Significance style colors
   pal_sig <- list(
-    'all'        = colors_sig("light blue", "blue", "yellow", "orange", "red", "green",
+    'all'         = colors_sig("light blue", "blue", "yellow", "orange", "red", "green",
                               "light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter",
                               "light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker"),
-    'main'       = colors_sig("light blue", "blue", "yellow", "orange", "red", "green"),
-    'lighter'    = colors_sig("light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter"),
-    'darker'     = colors_sig("light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker"),
-    'basic'      = colors_sig("light blue", "blue"),
-    'posneg'     = colors_sig("green", "red"),
-    'posnegneut' = colors_sig("green", "red", "light blue"),
-    'one'        = colors_sig("light blue"),
-    'two'        = colors_sig("light blue", "blue"),
-    'three'      = colors_sig("light blue", "blue", "yellow"),
-    'four'       = colors_sig("light blue", "blue", "yellow", "orange"),
-    'five'       = colors_sig("light blue", "blue", "yellow", "orange", "red")
+    'main'        = colors_sig("light blue", "blue", "yellow", "orange", "red", "green"),
+    'lighter'     = colors_sig("light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter"),
+    'darker'      = colors_sig("light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker"),
+    'basic'       = colors_sig("light blue", "blue"),
+    'posneg'      = colors_sig("green", "red"),
+    'posnegneut'  = colors_sig("green", "red", "light blue"),
+    'postoneg'    = colors_sig("green", "white", "light blue"),
+    'mintoplus'   = colors_sig("blue", "white", "red"),
+    'intense'     = colors_sig("yellow", "orange", "red"),
   )
 
   pal <- pal_sig[[palette]]
