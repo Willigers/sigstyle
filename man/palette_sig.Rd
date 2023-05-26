@@ -33,6 +33,7 @@ blues : white (low) and blue (high). Particularly suitable for continuous data.
 lightblues : white (low) and light blue (high). Particularly suitable for continuous data.
 intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
 highlight : light blue (regular) and red (emphasis). Particularly suitable for highlighting a selection of data points.
+intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
 }
 \examples{
 palette_sig("main")

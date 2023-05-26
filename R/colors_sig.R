@@ -45,11 +45,7 @@ colors_sig <- function(...) {
     'orange - lighter'     = "#e99a31", #233-154- 49
     'red - lighter'        = "#da294d", #218- 41- 77
     'green - lighter'      = "#14b174", # 20-177-116
-<<<<<<< HEAD
     'white'                = "#ffffff"  #255-255-255
-=======
-    'white'                = "#ffffff", #255-255-255
->>>>>>> f03a6693f8f6f8354cff5074bcf72b9e6b89ad60
   )
 
   cols <- c(...)

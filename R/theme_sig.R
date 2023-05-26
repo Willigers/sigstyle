@@ -52,22 +52,15 @@ theme_sig <- function(){
       plot.subtitle = element_text(          #subtitle
         family = font,            #font family
         size = 13,                #font size
-<<<<<<< HEAD
         hjust = 0.5,              #center align
         vjust = 1,
         margin = margin(t = 0, b = 5, unit = "pt"),               #raise slightly
-=======
->>>>>>> f03a6693f8f6f8354cff5074bcf72b9e6b89ad60
         color = "#2c2c2c"),       #subtitle is dark gray
 
       plot.caption = element_text(           #caption
         family = font,            #font family
         size = 9,                 #font size
-<<<<<<< HEAD
         margin = margin(t = 5, b = 0, unit = "pt"),
-=======
-        margin = margin(t = 5, b = 0, unit = "pt")
->>>>>>> f03a6693f8f6f8354cff5074bcf72b9e6b89ad60
         hjust = 1),               #right align
 
       axis.title = element_text(             #axis titles
