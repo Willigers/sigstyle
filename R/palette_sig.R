@@ -9,6 +9,7 @@
 #' lighter : the lighter 6 colors in significance theme. Particularly suitable for category data.
 #' darker : the darker 6 colors in significance theme. Particularly suitable for category data.
 #' all : all 18 colors in significance theme (main, lighter and darker combined). Particularly suitable for category data.
+#' light : the lighter 12 colors in significance theme (main and lighter combined). Particularly suitable for category data.
 #' posneg : green (positive) and red (negative). Particularly suitable for (binary) category data.
 #' posnegneut : green (positive), red (negative) and light blue (neutral). Particularly suitable for category data.
 #' postoneg : green (positive), white (neutral) and red (negative). Particularly suitable for continuous data.
@@ -41,6 +42,8 @@ palette_sig <- function(palette = "all", n = 0) {
                               "light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker"),
     'main'        = colors_sig("light blue", "blue", "yellow", "orange", "red", "green"),
     'lighter'     = colors_sig("light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter"),
+    'light'       = colors_sig("light blue", "blue", "yellow", "orange", "red", "green",
+                               "light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter"),
     'darker'      = colors_sig("light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker"),
     'basic'       = colors_sig("light blue", "blue"),
     'posneg'      = colors_sig("green", "red"),

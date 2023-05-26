@@ -25,6 +25,7 @@ main : the standard set of 6 colors in the significance theme. Particularly suit
 lighter : the lighter 6 colors in significance theme. Particularly suitable for category data.
 darker : the darker 6 colors in significance theme. Particularly suitable for category data.
 all : all 18 colors in significance theme (main, lighter and darker combined). Particularly suitable for category data.
+light : the lighter 12 colors in significance theme (main and lighter combined). Particularly suitable for category data.
 posneg : green (positive) and red (negative). Particularly suitable for (binary) category data.
 posnegneut : green (positive), red (negative) and light blue (neutral). Particularly suitable for category data.
 postoneg : green (positive), white (neutral) and red (negative). Particularly suitable for continuous data.

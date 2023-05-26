@@ -102,7 +102,7 @@ theme_sig <- function(){
 }
 
 theme_sig_flip <- function(){
-  theme_light() %+replace%    #replace elements we want to change
+  theme_sig() %+replace%    #replace elements we want to change
     ggplot2::theme(
       panel.grid.major.y = element_blank(),                                     # strip horizontal gridlines
       panel.grid.major.x = element_line(size = 0.1, colour = "grey75"),         # format vertical gridlines
