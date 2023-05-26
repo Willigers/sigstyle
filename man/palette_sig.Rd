@@ -29,7 +29,10 @@ posneg : green (positive) and red (negative). Particularly suitable for (binary)
 posnegneut : green (positive), red (negative) and light blue (neutral). Particularly suitable for category data.
 postoneg : green (positive), white (neutral) and red (negative). Particularly suitable for continuous data.
 mintoplus : blue (low), white (neutral) and red (high). Particularly suitable for continuous data.
+blues : white (low) and blue (high). Particularly suitable for continuous data.
+lightblues : white (low) and light blue (high). Particularly suitable for continuous data.
 intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
+highlight : light blue (regular) and red (emphasis). Particularly suitable for highlighting a selection of data points.
 }
 \examples{
 palette_sig("main")

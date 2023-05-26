@@ -13,7 +13,10 @@
 #' posnegneut : green (positive), red (negative) and light blue (neutral). Particularly suitable for category data.
 #' postoneg : green (positive), white (neutral) and red (negative). Particularly suitable for continuous data.
 #' mintoplus : blue (low), white (neutral) and red (high). Particularly suitable for continuous data.
+#' blues : white (low) and blue (high). Particularly suitable for continuous data.
+#' lightblues : white (low) and light blue (high). Particularly suitable for continuous data.
 #' intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
+#' highlight : light blue (regular) and red (emphasis). Particularly suitable for highlighting a selection of data points.
 #'
 #' @keywords color palette
 #'
@@ -43,11 +46,17 @@ palette_sig <- function(palette = "all", n = 0) {
     'posnegneut'  = colors_sig("green", "red", "light blue"),
     'postoneg'    = colors_sig("green", "white", "light blue"),
     'mintoplus'   = colors_sig("blue", "white", "red"),
+    'blues'       = colors_sig("white", "light blue - lighter", "blue"),
+    'lightblues'  = colors_sig("white", "light blue"),
+    'highlight'   = colors_sig("light blue", "red"),
     'intense'     = colors_sig("yellow", "orange", "red")
   )
 
   pal <- pal_sig[[palette]]
 
+  if(palette %in% c("all", "main", "lighter", "darker") & n>length(pal)) {
+    pal <- rep(pal, ceiling(n/length(pal)))
+  }
   if(n>0 & n<length(pal)) {
     pal <- pal[1:n]
   }

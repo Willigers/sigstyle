@@ -4,7 +4,14 @@
 \alias{scale_color_sig}
 \title{Color scale ramps from Significance style color palettes}
 \usage{
-scale_color_sig(palette = "all", discrete = TRUE, reverse = FALSE, n = 0, ...)
+scale_color_sig(
+  palette = "all",
+  discrete = TRUE,
+  reverse = FALSE,
+  random = FALSE,
+  n = 0,
+  ...
+)
 }
 \arguments{
 \item{palette}{String with name of a color palette. Possible values are "all" (complete 18 colors palette), "main" (6 colors: light blue, blue, yellow, orange, red and green), "lighter" (same 6 colors, but lighter), "darker" (same 6 colors, but darker), "basic" (only the 2 Significance logo colors: light blue and blue), "posneg" (green and red) and "posnegneut" (green, red and light blue)}
@@ -12,6 +19,8 @@ scale_color_sig(palette = "all", discrete = TRUE, reverse = FALSE, n = 0, ...)
 \item{discrete}{Indicates a discrete (TRUE) or continuous (FALSE) scale}
 
 \item{reverse}{Reverses color ordering if TRUE}
+
+\item{random}{Shuffles color ordering if TRUE}
 }
 \description{
 Defines color scales for ggplot2 plots, based on color ramps from color values. For determining point and line colors.

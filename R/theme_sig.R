@@ -52,6 +52,9 @@ theme_sig <- function(){
       plot.subtitle = element_text(          #subtitle
         family = font,            #font family
         size = 13,                #font size
+        hjust = 0.5,              #center align
+        vjust = 1,
+        margin = margin(t = 0, b = 5, unit = "pt"),               #raise slightly
         color = "#2c2c2c"),       #subtitle is dark gray
 
       plot.caption = element_text(           #caption
@@ -97,3 +100,11 @@ theme_sig <- function(){
     )
 
 }
+
+theme_sig_flip <- function(){
+  theme_light() %+replace%    #replace elements we want to change
+    ggplot2::theme(
+      panel.grid.major.y = element_blank(),                                     # strip horizontal gridlines
+      panel.grid.major.x = element_line(size = 0.1, colour = "grey75"),         # format vertical gridlines
+    )
+  }

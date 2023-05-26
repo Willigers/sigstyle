@@ -12,13 +12,14 @@
 #'   geom_point(colour = pal_sig("basic")
 #'
 #' @export
-colorramp_sig <- function(palette = "all", reverse = FALSE, n = 0, ...) {
+colorramp_sig <- function(palette = "all", reverse = FALSE, random = FALSE, n = 0, ...) {
 
   #Structure of functions adapted from: https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2
 
   pal <- palette_sig(palette, n)
 
   if (reverse) pal <- rev(pal)
+  if (random) pal <- sample(pal)
 
   colorRampPalette(pal, ...)
 }

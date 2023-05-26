@@ -5,6 +5,7 @@
 #' @param palette String with name of a color palette. Possible values are "all" (complete 18 colors palette), "main" (6 colors: light blue, blue, yellow, orange, red and green), "lighter" (same 6 colors, but lighter), "darker" (same 6 colors, but darker), "basic" (only the 2 Significance logo colors: light blue and blue), "posneg" (green and red) and "posnegneut" (green, red and light blue)
 #' @param discrete Indicates a discrete (TRUE) or continuous (FALSE) scale
 #' @param reverse Reverses color ordering if TRUE
+#' @param random Shuffles color ordering if TRUE
 #'
 #' @keywords color palette
 #'
@@ -13,9 +14,9 @@
 #'   scale_color_sig()
 #'
 #' @export
-scale_color_sig <- function(palette = "all", discrete = TRUE, reverse = FALSE, n = 0, ...) {
-  pal <- colorramp_sig(palette = palette, reverse = reverse, n = n, space = "Lab")
-  
+scale_color_sig <- function(palette = "all", discrete = TRUE, reverse = FALSE, random = FALSE, n = 0, ...) {
+  pal <- colorramp_sig(palette = palette, reverse = reverse, random = random, n = n, space = "Lab")
+
   if (discrete) {
     ggplot2::discrete_scale("color", paste0(palette, "_sig"), palette = pal, ...)
   } else {
