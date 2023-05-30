@@ -4,7 +4,7 @@
 \alias{theme_sig}
 \title{Significance ggplot2 theme}
 \usage{
-theme_sig()
+theme_sig(flip = FALSE)
 }
 \value{
 Theme to be used for ggplot2 plots
@@ -22,6 +22,15 @@ mtcars \%>\%
     ) +
     theme_sig() +
     scale_y_continuous(expand = c(0, 0))
+mtcars \%>\%
+  ggplot(aes(y=gear)) +
+    geom_bar() +
+    labs(x="Count",
+         y="Number of gears",
+         title="Car types"
+    ) +
+    theme_sig(flip = TRUE) +
+    scale_x_continuous(expand = c(0, 0))
 
 }
 \keyword{theme}
