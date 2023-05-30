@@ -42,8 +42,6 @@ theme_sig <- function(flip = FALSE) {
       ggplot2::theme(
 
         #grid elements: only horizontal grid lines remain
-        panel.grid.major.x = element_blank(),  #strip vertical gridlines
-        panel.grid.major.y = element_line(size = 0.1, colour = "grey75"),  #format horizontal gridlines
         panel.grid.minor = element_blank(),    #strip minor gridlines
         panel.border = element_blank(),        #strip border around plot
         panel.spacing = unit(0.75, "cm"),      #spacing between facets
@@ -113,8 +111,14 @@ theme_sig <- function(flip = FALSE) {
   if(flip == TRUE) {
     theme_sig_tmp <- theme_sig_tmp() %+replace%    #replace elements we want to change
       ggplot2::theme(
-        panel.grid.major.y = element_blank(),                                     # strip horizontal gridlines
-        panel.grid.major.x = element_line(size = 0.1, colour = "grey75"),         # format vertical gridlines
+        panel.grid.major.y = element_blank(),                                   # strip horizontal gridlines
+        panel.grid.major.x = element_line(size = 0.1, colour = "grey75"),       # format vertical gridlines
+      )
+  } else {
+    theme_sig_tmp <- theme_sig_tmp() %+replace%    #replace elements we want to change
+      ggplot2::theme(
+        panel.grid.major.x = element_blank(),                                   #strip vertical gridlines
+        panel.grid.major.y = element_line(size = 0.1, colour = "grey75"),       #format horizontal gridlines
       )
   }
 

@@ -20,9 +20,11 @@
 #' highlight : light blue (regular) and red (emphasis). Particularly suitable for highlighting a selection of data points.
 #' intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
 #'
+#' For the color palettes "all", "main", "light", "lighter" and "darker" the colors are recycled if the required number of colors is larger than the number of colors in the palette. For the other palettes the colors will be interpolated.
+#'
 #' @keywords color palette
 #'
-#' @param palette String with name of a color palette. Possible values are "all" (complete 18 colors palette), "main" (6 colors: light blue, blue, yellow, orange, red and green), "lighter" (same 6 colors, but lighter), "darker" (same 6 colors, but darker), "basic" (only the 2 Significance logo colors: light blue and blue), "posneg" (green and red) and "posnegneut" (green, red and light blue)
+#' @param palette String with name of a color palette. Possible values are listed below.
 #' @param n Number of colors to extract
 #'
 #' @return List with color names and hex values
@@ -58,7 +60,7 @@ palette_sig <- function(palette = "all", n = 0) {
 
   pal <- pal_sig[[palette]]
 
-  if(palette %in% c("all", "main", "lighter", "darker") & n>length(pal)) {
+  if(palette %in% c("all", "main", "lighter", "darker", "light") & n>length(pal)) {
     pal <- rep(pal, ceiling(n/length(pal)))
   }
   if(n>0 & n<length(pal)) {
