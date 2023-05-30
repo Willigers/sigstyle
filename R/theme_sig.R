@@ -16,9 +16,18 @@
 #'     ) +
 #'     theme_sig() +
 #'     scale_y_continuous(expand = c(0, 0))
+#' mtcars %>%
+#'   ggplot(aes(y=gear)) +
+#'     geom_bar() +
+#'     labs(x="Count",
+#'          y="Number of gears",
+#'          title="Car types"
+#'     ) +
+#'     theme_sig(flip = TRUE) +
+#'     scale_x_continuous(expand = c(0, 0))
 #'
 #' @export
-theme_sig <- function(){
+theme_sig <- function(flip = FALSE) {
 
   #Structure adapted from: https://rpubs.com/mclaire19/ggplot2-custom-themes
 
@@ -27,7 +36,7 @@ theme_sig <- function(){
 
   font <- "Georgia"
 
-  theme_light() %+replace%    #replace elements we want to change
+  theme_sig_tmp <- theme_light() %+replace%    #replace elements we want to change
 
     ggplot2::theme(
 
@@ -99,12 +108,14 @@ theme_sig <- function(){
         color = "#2c2c2c")
     )
 
+  if(flip == TRUE) {
+    theme_sig_tmp <- theme_sig_tmp() %+replace%    #replace elements we want to change
+      ggplot2::theme(
+        panel.grid.major.y = element_blank(),                                     # strip horizontal gridlines
+        panel.grid.major.x = element_line(size = 0.1, colour = "grey75"),         # format vertical gridlines
+      )
+  }
+
+  return(theme_sig_tmp)
 }
 
-theme_sig_flip <- function(){
-  theme_sig() %+replace%    #replace elements we want to change
-    ggplot2::theme(
-      panel.grid.major.y = element_blank(),                                     # strip horizontal gridlines
-      panel.grid.major.x = element_line(size = 0.1, colour = "grey75"),         # format vertical gridlines
-    )
-  }
