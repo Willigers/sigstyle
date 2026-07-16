@@ -2,7 +2,7 @@
 % Please edit documentation in R/scale_fill_sig.R
 \name{scale_fill_sig}
 \alias{scale_fill_sig}
-\title{Fill color scale ramps from Significance style color palettes}
+\title{Significance fill scales for ggplot2}
 \usage{
 scale_fill_sig(
   palette = "all",
@@ -14,30 +14,62 @@ scale_fill_sig(
 )
 }
 \arguments{
-\item{palette}{String with name of a color palette. Possible values are "all" (complete 18 colors palette), "main" (6 colors: light blue, blue, yellow, orange, red and green), "lighter" (same 6 colors, but lighter), "darker" (same 6 colors, but darker), "basic" (only the 2 Significance logo colors: light blue and blue), "posneg" (green and red) and "posnegneut" (green, red and light blue)}
+\item{palette}{Name of the palette to use. See \code{\link[=palette_sig]{palette_sig()}} for the
+available options.}
 
-\item{discrete}{Indicates a discrete (TRUE) or continuous (FALSE) scale}
+\item{discrete}{Logical; if \code{TRUE} (default), creates a discrete fill
+scale. If \code{FALSE}, creates a continuous gradient scale.}
 
-\item{reverse}{Reverses color ordering if TRUE}
+\item{reverse}{Logical; if \code{TRUE}, reverse the colour order before
+constructing the scale.}
 
-\item{random}{Shuffles color ordering if TRUE}
+\item{random}{Logical; if \code{TRUE}, randomly shuffle the colours before
+constructing the scale.}
+
+\item{n}{Number of colours to extract from the base palette before
+constructing the scale. Defaults to \code{0}, which uses all colours in the
+selected palette.}
+
+\item{...}{Additional arguments passed to the underlying ggplot2 scale
+function.}
+}
+\value{
+A ggplot2 scale object suitable for addition to a plot using \code{+}.
 }
 \description{
-Defines color scales for ggplot2 plots, based on color ramps from color values. For determining fill colors.
+Creates ggplot2 fill scales based on the predefined Significance
+house style palettes. Both discrete and continuous scales are supported.
+}
+\details{
+Available palettes are identical to those supported by \code{\link[=palette_sig]{palette_sig()}}.
 }
 \examples{
-mtcars \%>\%
-mutate(gear = as_factor(gear)) \%>\%
-  group_by(gear) \%>\%
-  summarise(count = n()) \%>\%
-  ggplot(aes(x="", y=count, fill=gear)) +
-  geom_bar(stat="identity", width=1, color="white") +
-  labs(title="Number of gears") +
-  coord_polar("y", start=0, direction=-1) +
-  theme_sig() +
-  scale_fill_sig("basic", discrete=TRUE, reverse=FALSE) +
-  scale_y_discrete(expand = c(0, 0))
+library(ggplot2)
+
+# Discrete fill scale
+ggplot(mtcars,
+       aes(factor(cyl), fill = factor(cyl))) +
+  geom_bar() +
+  scale_fill_sig("main") +
+  labs(
+    x = "Number of cylinders",
+    fill = "Cylinders"
+  )
+
+# Continuous fill scale
+ggplot(mtcars,
+       aes(factor(cyl), mpg, fill = hp)) +
+  geom_col() +
+  scale_fill_sig("mintoplus", discrete = FALSE) +
+  labs(
+    x = "Number of cylinders",
+    fill = "Horsepower"
+  )
 
 }
-\keyword{color}
+\seealso{
+\code{\link[=colors_sig]{colors_sig()}}, \code{\link[=palette_sig]{palette_sig()}}, \code{\link[=colorramp_sig]{colorramp_sig()}},
+\code{\link[=scale_color_sig]{scale_color_sig()}}
+}
+\keyword{colour}
 \keyword{palette}

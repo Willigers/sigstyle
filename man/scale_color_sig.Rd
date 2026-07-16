@@ -2,7 +2,7 @@
 % Please edit documentation in R/scale_color_sig.R
 \name{scale_color_sig}
 \alias{scale_color_sig}
-\title{Color scale ramps from Significance style color palettes}
+\title{Significance colour scales for ggplot2}
 \usage{
 scale_color_sig(
   palette = "all",
@@ -14,21 +14,52 @@ scale_color_sig(
 )
 }
 \arguments{
-\item{palette}{String with name of a color palette. Possible values are "all" (complete 18 colors palette), "main" (6 colors: light blue, blue, yellow, orange, red and green), "lighter" (same 6 colors, but lighter), "darker" (same 6 colors, but darker), "basic" (only the 2 Significance logo colors: light blue and blue), "posneg" (green and red) and "posnegneut" (green, red and light blue)}
+\item{palette}{Name of the palette to use. See \code{\link[=palette_sig]{palette_sig()}} for the
+available options.}
 
-\item{discrete}{Indicates a discrete (TRUE) or continuous (FALSE) scale}
+\item{discrete}{Logical; if \code{TRUE} (default), creates a discrete colour
+scale. If \code{FALSE}, creates a continuous gradient scale.}
 
-\item{reverse}{Reverses color ordering if TRUE}
+\item{reverse}{Logical; if \code{TRUE}, reverse the colour order before
+constructing the scale.}
 
-\item{random}{Shuffles color ordering if TRUE}
+\item{random}{Logical; if \code{TRUE}, randomly shuffle the colours before
+constructing the scale.}
+
+\item{n}{Number of colours to extract from the base palette before
+constructing the scale. Defaults to \code{0}, which uses all colours in the
+selected palette.}
+
+\item{...}{Additional arguments passed to the underlying ggplot2 scale
+function.}
+}
+\value{
+A ggplot2 scale object suitable for addition to a plot using \code{+}.
 }
 \description{
-Defines color scales for ggplot2 plots, based on color ramps from color values. For determining point and line colors.
+Creates ggplot2 colour scales based on the predefined Significance
+house style palettes. Both discrete and continuous scales are supported.
+}
+\details{
+Available palettes are identical to those supported by \code{\link[=palette_sig]{palette_sig()}}.
 }
 \examples{
-ggplot2::ggplot() +
-  scale_color_sig()
+library(ggplot2)
+
+# Discrete colour scale
+ggplot(mtcars,
+       aes(wt, mpg, colour = factor(cyl))) +
+  geom_point(size = 3) +
+  scale_color_sig("main") +
+  labs(colour = "Cylinders")
+
+# Continuous colour scale
+ggplot(mtcars,
+       aes(wt, mpg, colour = hp)) +
+  geom_point(size = 3) +
+  scale_color_sig("mintoplus", discrete = FALSE) +
+  labs(colour = "Horsepower")
 
 }
-\keyword{color}
+\keyword{colour}
 \keyword{palette}

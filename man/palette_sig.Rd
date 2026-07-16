@@ -12,35 +12,51 @@ palette_sig(palette = "all", n = 0)
 \item{n}{Number of colors to extract}
 }
 \value{
-List with color names and hex values
+A character vector containing colour hex codes.
 }
 \description{
-Defines color palettes, e.g. for use in ggplot2 plots.
-All color palettes are based on the colors from the Significance house style Excel template.
+Returns colour palettes based on the Significance house style.
+These palettes are derived from the colours used in the Significance
+Excel template and can be used in plots, tables, and other visualisations.
 }
 \details{
-Currently available palettes are:
-basic : the 2 colors from the Significance logo. Suitable for category or continuous data.
-main : the standard set of 6 colors in the significance theme. Particularly suitable for category data.
-lighter : the lighter 6 colors in significance theme. Particularly suitable for category data.
-darker : the darker 6 colors in significance theme. Particularly suitable for category data.
-all : all 18 colors in significance theme (main, lighter and darker combined). Particularly suitable for category data.
-light : the lighter 12 colors in significance theme (main and lighter combined). Particularly suitable for category data.
-posneg : green (positive) and red (negative). Particularly suitable for (binary) category data.
-posnegneut : green (positive), red (negative) and light blue (neutral). Particularly suitable for category data.
-postoneg : green (positive), white (neutral) and red (negative). Particularly suitable for continuous data.
-mintoplus : blue (low), white (neutral) and red (high). Particularly suitable for continuous data.
-blues : white (low) and blue (high). Particularly suitable for continuous data.
-lightblues : white (low) and light blue (high). Particularly suitable for continuous data.
-intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
-highlight : light blue (regular) and red (emphasis). Particularly suitable for highlighting a selection of data points.
-intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
+Available palettes:
 
-For the color palettes "all", "main", "light", "lighter" and "darker" the colors are recycled if the required number of colors is larger than the number of colors in the palette. For the other palettes the colors will be interpolated.
+\strong{Categorical palettes}
+\itemize{
+\item \code{"basic"} – the two colours from the Significance logo.
+\item \code{"main"} – the standard set of six Significance colours.
+\item \code{"lighter"} – lighter variants of the six standard colours.
+\item \code{"darker"} – darker variants of the six standard colours.
+\item \code{"light"} – the standard and lighter colours combined (12 colours).
+\item \code{"all"} – all standard, lighter, and darker colours combined (18 colours).
+\item \code{"posneg"} – green (positive) and red (negative).
+\item \code{"posnegneut"} – green (positive), red (negative), and light blue (neutral).
+}
+
+\strong{Continuous palettes}
+\itemize{
+\item \code{"postoneg"} – green (positive), white (neutral), and red (negative).
+\item \code{"mintoplus"} – blue (low), white (neutral), and red (high).
+\item \code{"blues"} – white (low) to blue (high).
+\item \code{"lightblues"} – white (low) to light blue (high).
+\item \code{"intense"} – yellow (low), orange (mid), and red (high).
+}
+
+\strong{Highlighting palette}
+\itemize{
+\item \code{"highlight"} – light blue for regular data and red for highlighted values.
+}
+
+For the palettes \code{"all"}, \code{"main"}, \code{"light"}, \code{"lighter"}, and \code{"darker"},
+colours are recycled when \code{n} exceeds the number of colours available in the
+palette. For all other palettes, colours are interpolated between the palette
+endpoints when additional colours are requested.
 }
 \examples{
 palette_sig("main")
 
 }
 \keyword{color}
+\keyword{colour}
 \keyword{palette}

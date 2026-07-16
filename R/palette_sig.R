@@ -1,36 +1,57 @@
 #' Significance color palettes
 #'
-#' Defines color palettes, e.g. for use in ggplot2 plots.
-#' All color palettes are based on the colors from the Significance house style Excel template.
 #'
-#' Currently available palettes are:
-#' basic : the 2 colors from the Significance logo. Suitable for category or continuous data.
-#' main : the standard set of 6 colors in the significance theme. Particularly suitable for category data.
-#' lighter : the lighter 6 colors in significance theme. Particularly suitable for category data.
-#' darker : the darker 6 colors in significance theme. Particularly suitable for category data.
-#' all : all 18 colors in significance theme (main, lighter and darker combined). Particularly suitable for category data.
-#' light : the lighter 12 colors in significance theme (main and lighter combined). Particularly suitable for category data.
-#' posneg : green (positive) and red (negative). Particularly suitable for (binary) category data.
-#' posnegneut : green (positive), red (negative) and light blue (neutral). Particularly suitable for category data.
-#' postoneg : green (positive), white (neutral) and red (negative). Particularly suitable for continuous data.
-#' mintoplus : blue (low), white (neutral) and red (high). Particularly suitable for continuous data.
-#' blues : white (low) and blue (high). Particularly suitable for continuous data.
-#' lightblues : white (low) and light blue (high). Particularly suitable for continuous data.
-#' intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
-#' highlight : light blue (regular) and red (emphasis). Particularly suitable for highlighting a selection of data points.
-#' intense : yellow (low), orange (mid) and red (high). Particularly suitable for continuous data.
+#' Returns colour palettes based on the Significance house style.
+#' These palettes are derived from the colours used in the Significance
+#' Excel template and can be used in plots, tables, and other visualisations.
 #'
-#' For the color palettes "all", "main", "light", "lighter" and "darker" the colors are recycled if the required number of colors is larger than the number of colors in the palette. For the other palettes the colors will be interpolated.
+#' @details
+#' Available palettes:
+#'
+#' **Categorical palettes**
+#'
+#' * `"basic"` – the two colours from the Significance logo.
+#' * `"main"` – the standard set of six Significance colours.
+#' * `"lighter"` – lighter variants of the six standard colours.
+#' * `"darker"` – darker variants of the six standard colours.
+#' * `"light"` – the standard and lighter colours combined (12 colours).
+#' * `"all"` – all standard, lighter, and darker colours combined (18 colours).
+#' * `"posneg"` – green (positive) and red (negative).
+#' * `"posnegneut"` – green (positive), red (negative), and light blue (neutral).
+#'
+#' **Continuous palettes**
+#'
+#' * `"postoneg"` – green (positive), white (neutral), and red (negative).
+#' * `"mintoplus"` – blue (low), white (neutral), and red (high).
+#' * `"blues"` – white (low) to blue (high).
+#' * `"lightblues"` – white (low) to light blue (high).
+#' * `"intense"` – yellow (low), orange (mid), and red (high).
+#'
+#' **Highlighting palette**
+#'
+#' * `"highlight"` – light blue for regular data and red for highlighted values.
+#'
+#' For the palettes `"all"`, `"main"`, `"light"`, `"lighter"`, and `"darker"`,
+#' colours are recycled when `n` exceeds the number of colours available in the
+#' palette. For all other palettes, colours are interpolated between the palette
+#' endpoints when additional colours are requested.
+#'
+#' @param palette Name of the palette to return.
+#' @param n Number of colours to return. If `n = 0` (default), all colours in
+#'   the selected palette are returned.
 #'
 #' @keywords color palette
 #'
 #' @param palette String with name of a color palette. Possible values are listed below.
 #' @param n Number of colors to extract
 #'
-#' @return List with color names and hex values
+#' @return
+#' A character vector containing colour hex codes.
 #'
 #' @examples
 #' palette_sig("main")
+#'
+#' @keywords colour palette
 #'
 #' @export
 palette_sig <- function(palette = "all", n = 0) {

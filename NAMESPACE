@@ -2,6 +2,7 @@
 
 export(colorramp_sig)
 export(colors_sig)
+export(gt_theme_sig)
 export(palette_sig)
 export(scale_color_sig)
 export(scale_fill_sig)
