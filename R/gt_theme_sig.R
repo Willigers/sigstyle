@@ -140,14 +140,17 @@ gt_theme_sig <- function(
   # Determine colours for title
   title_text_colour <- if (invert_title | invert) "white" else brand_colour
   title_fill_colour <- if (invert_title | invert) brand_colour else "white"
+  title_border_colour <- if (invert_title | invert) "white" else brand_colour
 
   # Determine colours for column labels
   label_text_colour <- if (invert_column_labels | invert) "white" else brand_colour
   label_fill_colour <- if (invert_column_labels | invert) brand_colour else "white"
+  label_border_colour <- if (invert_column_labels | invert) "white" else brand_colour
 
   # Determine colours for stub
   stub_text_colour <- if (invert_stub | invert) "white" else brand_colour
   stub_fill_colour <- if (invert_stub | invert) brand_colour else "white"
+  stub_border_colour <- if (invert_stub | invert) "white" else brand_colour
 
   # ---------------------------------------------------------------------------
   # Basic table options
@@ -166,17 +169,17 @@ gt_theme_sig <- function(
       heading.subtitle.font.size = px(14),
       heading.border.bottom.style = "solid",
       heading.border.bottom.width = "0.5pt",
-      heading.border.bottom.color = brand_colour,
+      heading.border.bottom.color = title_border_colour,
 
       column_labels.background.color = label_fill_colour,
       column_labels.font.size = px(14),
       column_labels.font.weight = "bold",
       column_labels.border.top.style = "solid",
       column_labels.border.top.width = "0.5pt",
-      column_labels.border.top.color = brand_colour,
+      column_labels.border.top.color = label_border_colour,
       column_labels.border.bottom.style = "solid",
       column_labels.border.bottom.width = "0.5pt",
-      column_labels.border.bottom.color = brand_colour,
+      column_labels.border.bottom.color = label_border_colour,
 
       # Remove regular horizontal body row lines
       table_body.hlines.style = "none",
@@ -191,25 +194,25 @@ gt_theme_sig <- function(
       table_body.border.bottom.width = "0.5pt",
       table_body.border.bottom.color = brand_colour,
       
-      # Set the table's top and bottom borders in brand colour
+      # Set the table's top and bottom border colour
       table.border.top.style = "solid",
-      table.border.top.color = brand_colour,
+      table.border.top.color = label_border_colour,
       table.border.bottom.style = "solid",
-      table.border.bottom.color = brand_colour,
+      table.border.bottom.color = label_border_colour,
 
       # Border between stub / row labels and data body
       stub.border.style = "solid",
       stub.border.width = "0.5pt",
-      stub.border.color = brand_colour,
+      stub.border.color = stub_border_colour,
 
       # Row group labels
       row_group.font.weight = "bold",
       row_group.border.top.style = "solid",
       row_group.border.top.width = "0.5pt",
-      row_group.border.top.color = brand_colour,
+      row_group.border.top.color = stub_border_colour,
       row_group.border.bottom.style = "solid",
       row_group.border.bottom.width = "0.5pt",
-      row_group.border.bottom.color = brand_colour,
+      row_group.border.bottom.color = stub_border_colour,
 
       data_row.padding = px(6)
     ) |>

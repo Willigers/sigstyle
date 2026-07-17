@@ -1,6 +1,6 @@
 Package: sigstyle
 Title: Significance style
-Version: 0.1.4.0000
+Version: 0.1.4.0001
 Authors@R: 
     person(given = "Jasper",
            family = "Willigers",
