@@ -1,12 +1,11 @@
 Package: sigstyle
 Title: Significance style
-Version: 0.1.3.9000
+Version: 0.1.4.0000
 Authors@R: 
     person(given = "Jasper",
            family = "Willigers",
            role = c("aut", "cre"),
-           email = "willigers@significance.nl",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "willigers@significance.nl")
 Description: Definition of themes and colours for Significance style reports and presentations
 License: use_mit_license()
 Encoding: UTF-8

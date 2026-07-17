@@ -8,15 +8,16 @@ gt_theme_sig(
   gt_tbl,
   table_type = c("presentation_half", "presentation_full", "report"),
   width_cm = NULL,
+  invert = FALSE,
   invert_title = FALSE,
   invert_column_labels = FALSE,
   invert_stub = FALSE,
   style_summary_rows = FALSE,
-  body_font = c("Georgia Pro", "Georgia"),
-  header_font = c("Avenir Next LT Pro", "Georgia"),
+  body_font = c("Georgia", "serif"),
+  header_font = c("Georgia", "serif"),
   brand_colour = colors_sig("blue"),
-  stripe_colour_1 = "#EEF8FC",
-  stripe_colour_2 = "#DDF1F9"
+  stripe_colour_1 = colors_sig("very light blue"),
+  stripe_colour_2 = colors_sig("lightest blue")
 )
 }
 \arguments{
@@ -28,6 +29,10 @@ gt_theme_sig(
 \item{width_cm}{Optional table width in centimetres. If \code{NULL}
 (default), a predefined width corresponding to \code{table_type}
 is used.}
+
+\item{invert}{Logical; if \code{TRUE}, display all titles and labels with a
+coloured background and white text. If \code{FALSE}, display coloured text on a
+white background.}
 
 \item{invert_title}{Logical; if \code{TRUE}, display the title area with a
 coloured background and white text. If \code{FALSE}, display coloured text on a
@@ -95,24 +100,33 @@ library(gt)
 library(dplyr)
 
 mtcars |>
+  tibble::rownames_to_column("vehicle") |>
+  select(vehicle, mpg, cyl, hp) |>
   head(8) |>
-  select(mpg, cyl, hp) |>
-  gt(rowname_col = "cyl") |>
+  gt(rowname_col = "vehicle") |>
   tab_header(
     title = "Example table",
     subtitle = "Formatted using the Significance house style"
   ) |>
-  gt_theme_sig()
+  gt_theme_sig(
+    body_font = "Georgia",
+    header_font = "Georgia"
+  )
 
 # Example with inverted column labels
 mtcars |>
-  count(cyl) |>
-  gt(rowname_col = "cyl") |>
+  tibble::rownames_to_column("vehicle") |>
+  select(vehicle, mpg, cyl, hp) |>
+  head(8) |>
+  gt(rowname_col = "vehicle") |>
   tab_header(
-    title = "Vehicles by cylinder class"
+    title = "Example table",
+    subtitle = "Formatted using the Significance house style"
   ) |>
   gt_theme_sig(
-    invert_column_labels = TRUE
+    body_font = "Georgia",
+    header_font = "Georgia",
+    invert = TRUE
   )
 
 }
