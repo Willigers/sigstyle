@@ -3,6 +3,9 @@
 #' Creates ggplot2 fill scales based on the predefined Significance
 #' house style palettes. Both discrete and continuous scales are supported.
 #'
+#' For discrete scales, the number of fill colours is determined automatically
+#' from the number of levels present in the data.
+#'
 #' Available palettes are identical to those supported by [palette_sig()].
 #'
 #' @param palette Name of the palette to use. See [palette_sig()] for the
@@ -13,9 +16,13 @@
 #'   constructing the scale.
 #' @param random Logical; if `TRUE`, randomly shuffle the colours before
 #'   constructing the scale.
-#' @param n Number of colours to extract from the base palette before
-#'   constructing the scale. Defaults to `0`, which uses all colours in the
-#'   selected palette.
+#' @param n Deprecated.
+#'   For discrete scales the required number of colours is now determined
+#'   automatically by ggplot2 based on the number of levels in the mapped
+#'   variable. This argument is ignored when `discrete = TRUE`.
+#'
+#'   For continuous scales, use a suitable palette instead of manually
+#'   specifying the number of colours.
 #' @param ... Additional arguments passed to the underlying ggplot2 scale
 #'   function.
 #'
@@ -52,12 +59,42 @@
 #' @keywords colour palette
 #'
 #' @export
-scale_fill_sig <- function(palette = "all", discrete = TRUE, reverse = FALSE, random = FALSE, n = 0, ...) {
-  pal <- colorramp_sig(palette = palette, reverse = reverse, random = random, n = n, space = "Lab")
+scale_fill_sig <- function(
+  palette = "all",
+  discrete = TRUE,
+  reverse = FALSE,
+  random = FALSE,
+  n = 0,
+  ...
+) {
 
   if (discrete) {
-    ggplot2::discrete_scale("fill", paste0(palette, "_sig"), palette = pal, ...)
+  
+    ggplot2::discrete_scale(
+      aesthetics = "fill",
+      scale_name = paste0(palette, "_sig"),
+      palette = .palette_sig_function(
+        palette = palette,
+        reverse = reverse,
+        random = random
+      ),
+      ...
+    )
+    
   } else {
-    ggplot2::scale_fill_gradientn(colours = pal(256), ...)
+  
+    pal <- .colorramp_sig_function(
+      palette = palette,
+      reverse = reverse,
+      random = random, 
+      n = n, 
+      space = "Lab"
+    )
+    
+    ggplot2::scale_fill_gradientn(
+      colours = pal(256), 
+      ...
+    )
+    
   }
 }

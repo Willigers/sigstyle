@@ -26,9 +26,13 @@ constructing the scale.}
 \item{random}{Logical; if \code{TRUE}, randomly shuffle the colours before
 constructing the scale.}
 
-\item{n}{Number of colours to extract from the base palette before
-constructing the scale. Defaults to \code{0}, which uses all colours in the
-selected palette.}
+\item{n}{Deprecated.
+For discrete scales the required number of colours is now determined
+automatically by ggplot2 based on the number of levels in the mapped
+variable. This argument is ignored when \code{discrete = TRUE}.
+
+For continuous scales, use a suitable palette instead of manually
+specifying the number of colours.}
 
 \item{...}{Additional arguments passed to the underlying ggplot2 scale
 function.}
@@ -41,6 +45,9 @@ Creates ggplot2 colour scales based on the predefined Significance
 house style palettes. Both discrete and continuous scales are supported.
 }
 \details{
+For discrete scales, the number of colours is determined automatically
+from the number of levels present in the data.
+
 Available palettes are identical to those supported by \code{\link[=palette_sig]{palette_sig()}}.
 }
 \examples{
