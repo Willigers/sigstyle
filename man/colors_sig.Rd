@@ -7,7 +7,7 @@
 colors_sig(...)
 }
 \arguments{
-\item{...}{String or list of strings with color name(s). Possible values are "light blue", "blue", "yellow", "orange", "red", "green", "light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker", "light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter"}
+\item{...}{String or list of strings with color name(s). Possible values are "light blue", "blue", "yellow", "orange", "red", "green", "light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker", "light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter", "very light blue", "lightest blue"}
 }
 \value{
 String or list of strings with color hex codes

@@ -4,7 +4,7 @@
 #'
 #' @keywords color palette
 #'
-#' @param ... String or list of strings with color name(s). Possible values are "light blue", "blue", "yellow", "orange", "red", "green", "light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker", "light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter"
+#' @param ... String or list of strings with color name(s). Possible values are "light blue", "blue", "yellow", "orange", "red", "green", "light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker", "light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter", "very light blue", "lightest blue"
 #'
 #' @return String or list of strings with color hex codes
 #'
@@ -47,7 +47,7 @@ colors_sig <- function(...) {
     'green - lighter'      = "#14b174", # 20-177-116
     'white'                = "#ffffff", #255-255-255
     'very light blue'      = '#ddf1f9', #221-241-249
-    'lightest blue'        = '#eef8fc', #238-248-252
+    'lightest blue'        = '#eef8fc'  #238-248-252
   )
 
   cols <- c(...)
