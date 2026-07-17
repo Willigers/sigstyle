@@ -196,9 +196,9 @@ gt_theme_sig <- function(
       
       # Set the table's top and bottom border colour
       table.border.top.style = "solid",
-      table.border.top.color = label_border_colour,
+      table.border.top.color = brand_colour,
       table.border.bottom.style = "solid",
-      table.border.bottom.color = label_border_colour,
+      table.border.bottom.color = brand_colour,
 
       # Border between stub / row labels and data body
       stub.border.style = "solid",
