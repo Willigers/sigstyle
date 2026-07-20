@@ -46,6 +46,9 @@
 #'   scale_color_sig("mintoplus", discrete = FALSE) +
 #'   labs(colour = "Horsepower")
 #'
+#' @seealso
+#' [colors_sig()], [palette_sig()], [scale_fill_sig()]
+#'
 #' @keywords colour palette
 #'
 #' @export

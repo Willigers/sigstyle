@@ -1,8 +1,15 @@
 #' Significance ggplot2 theme
 #'
-#' Defines the theme for ggplot2 plots. This includes fonts, grid lines, axis ticks, margins, etc.
+#' Defines the theme for ggplot2 plots. This includes fonts, grid lines, axis 
+#'   ticks, margins, etc.
 #'
 #' @keywords theme
+#'
+#' @param grid Logical; if `TRUE`, shows both horizontal and vertical grid 
+#'   lines. If `FALSE` (default), shows either horizontal or vertical grid 
+#'   lines, depending on flip.
+#' @param flip Logical; if `TRUE`, shows vertical grid lines. If `FALSE` 
+#'   (default), shows horizontal grid lines. Only has effect if `grid = FALSE`.
 #'
 #' @return Theme to be used for ggplot2 plots
 #'
@@ -27,9 +34,7 @@
 #'     scale_x_continuous(expand = c(0, 0))
 #'
 #' @export
-theme_sig <- function(flip = FALSE) {
-
-  #Structure adapted from: https://rpubs.com/mclaire19/ggplot2-custom-themes
+theme_sig <- function(flip = FALSE, grid = FALSE) {
 
   #Make sure R can find the Georgia font on Windows
   windowsFonts(Georgia=windowsFont("Georgia"))
@@ -108,18 +113,26 @@ theme_sig <- function(flip = FALSE) {
       )
   }
 
-  if(flip == TRUE) {
+  if(grid == TRUE) {
     theme_sig_tmp <- theme_sig_tmp() %+replace%    #replace elements we want to change
       ggplot2::theme(
-        panel.grid.major.y = element_blank(),                                   # strip horizontal gridlines
-        panel.grid.major.x = element_line(size = 0.1, colour = "grey75"),       # format vertical gridlines
+        panel.grid.major.y = element_line(linewidth = 0.1, colour = "grey75"),  # format horizontal gridlines
+        panel.grid.major.x = element_line(linewidth = 0.1, colour = "grey75"),  # format vertical gridlines
       )
   } else {
-    theme_sig_tmp <- theme_sig_tmp() %+replace%    #replace elements we want to change
-      ggplot2::theme(
-        panel.grid.major.x = element_blank(),                                   #strip vertical gridlines
-        panel.grid.major.y = element_line(size = 0.1, colour = "grey75"),       #format horizontal gridlines
-      )
+    if(flip == TRUE) {
+      theme_sig_tmp <- theme_sig_tmp() %+replace%    #replace elements we want to change
+        ggplot2::theme(
+          panel.grid.major.y = element_blank(),                                   # strip horizontal gridlines
+          panel.grid.major.x = element_line(linewidth = 0.1, colour = "grey75"),  # format vertical gridlines
+        )
+    } else {
+      theme_sig_tmp <- theme_sig_tmp() %+replace%    #replace elements we want to change
+        ggplot2::theme(
+          panel.grid.major.x = element_blank(),                                   # strip vertical gridlines
+          panel.grid.major.y = element_line(linewidth = 0.1, colour = "grey75"),  # format horizontal gridlines
+        )
+    }
   }
 
   return(theme_sig_tmp)

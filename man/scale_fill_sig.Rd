@@ -75,8 +75,7 @@ ggplot(mtcars,
 
 }
 \seealso{
-\code{\link[=colors_sig]{colors_sig()}}, \code{\link[=palette_sig]{palette_sig()}}, \code{\link[=colorramp_sig]{colorramp_sig()}},
-\code{\link[=scale_color_sig]{scale_color_sig()}}
+\code{\link[=colors_sig]{colors_sig()}}, \code{\link[=palette_sig]{palette_sig()}}, \code{\link[=scale_color_sig]{scale_color_sig()}}
 }
 \keyword{colour}
 \keyword{palette}

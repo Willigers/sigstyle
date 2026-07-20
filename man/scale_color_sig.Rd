@@ -68,5 +68,8 @@ ggplot(mtcars,
   labs(colour = "Horsepower")
 
 }
+\seealso{
+\code{\link[=colors_sig]{colors_sig()}}, \code{\link[=palette_sig]{palette_sig()}}, \code{\link[=scale_fill_sig]{scale_fill_sig()}}
+}
 \keyword{colour}
 \keyword{palette}

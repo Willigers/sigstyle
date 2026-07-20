@@ -19,8 +19,6 @@
 #' @export
 theme_sig_map <- function(){
 
-  #Structure adapted from: https://rpubs.com/mclaire19/ggplot2-custom-themes
-
   #Make sure R can find the Georgia font on Windows
   windowsFonts(Georgia=windowsFont("Georgia"))
 

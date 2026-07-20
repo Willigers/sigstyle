@@ -4,13 +4,22 @@
 \alias{theme_sig}
 \title{Significance ggplot2 theme}
 \usage{
-theme_sig(flip = FALSE)
+theme_sig(flip = FALSE, grid = FALSE)
+}
+\arguments{
+\item{flip}{Logical; if \code{TRUE}, shows vertical grid lines. If \code{FALSE}
+(default), shows horizontal grid lines. Only has effect if \code{grid = FALSE}.}
+
+\item{grid}{Logical; if \code{TRUE}, shows both horizontal and vertical grid
+lines. If \code{FALSE} (default), shows either horizontal or vertical grid
+lines, depending on flip.}
 }
 \value{
 Theme to be used for ggplot2 plots
 }
 \description{
-Defines the theme for ggplot2 plots. This includes fonts, grid lines, axis ticks, margins, etc.
+Defines the theme for ggplot2 plots. This includes fonts, grid lines, axis
+ticks, margins, etc.
 }
 \examples{
 mtcars \%>\%

@@ -53,8 +53,7 @@
 #'   )
 #'
 #' @seealso
-#' [colors_sig()], [palette_sig()], [colorramp_sig()],
-#' [scale_color_sig()]
+#' [colors_sig()], [palette_sig()], [scale_color_sig()]
 #'
 #' @keywords colour palette
 #'
