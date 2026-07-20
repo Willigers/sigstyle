@@ -68,32 +68,32 @@ scale_fill_sig <- function(
 ) {
 
   if (discrete) {
-  
+
     ggplot2::discrete_scale(
       aesthetics = "fill",
       scale_name = paste0(palette, "_sig"),
-      palette = .palette_sig_function(
+      palette = palette_sig_function(
         palette = palette,
         reverse = reverse,
         random = random
       ),
       ...
     )
-    
+
   } else {
-  
-    pal <- .colorramp_sig_function(
+
+    pal <- colorramp_sig_function(
       palette = palette,
       reverse = reverse,
-      random = random, 
-      n = n, 
+      random = random,
+      n = n,
       space = "Lab"
     )
-    
+
     ggplot2::scale_fill_gradientn(
-      colours = pal(256), 
+      colours = pal(256),
       ...
     )
-    
+
   }
 }

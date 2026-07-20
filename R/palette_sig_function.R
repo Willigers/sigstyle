@@ -1,4 +1,8 @@
-.palette_sig_function <- function(
+#' Create color palette for discrete scales
+#'
+#' @return String or list of strings with color hex codes
+#'
+palette_sig_function <- function(
     palette = "all",
     reverse = FALSE,
     random = FALSE
@@ -13,6 +17,6 @@
     if (random) cols <- sample(cols)
 
     cols[seq_len(n)]
-    
+
   }
 }
