@@ -18,5 +18,7 @@ palette_sig_function <- function(
 
     cols[seq_len(n)]
 
+    unname(cols)
+    
   }
 }
