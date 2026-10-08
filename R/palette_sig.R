@@ -24,7 +24,8 @@
 #' * `"postoneg"` – green (positive), white (neutral), and red (negative).
 #' * `"mintoplus"` – blue (low), white (neutral), and red (high).
 #' * `"blues"` – white (low) to blue (high).
-#' * `"lightblues"` – white (low) to light blue (high).
+#' * `"white2lightblues"` – white (low) to light blue (high).
+#' * `"lightblues"` – light blue - lighter (low), light blue (mid), and light blue - darker (high).
 #' * `"intense"` – yellow (low), orange (mid), and red (high).
 #'
 #' **Highlighting palette**
@@ -74,7 +75,8 @@ palette_sig <- function(palette = "all", n = 0) {
     'postoneg'    = colors_sig("green", "white", "light blue"),
     'mintoplus'   = colors_sig("blue", "white", "red"),
     'blues'       = colors_sig("white", "light blue - lighter", "blue"),
-    'lightblues'  = colors_sig("white", "light blue"),
+    'white2lightblue' = colors_sig("white", "light blue"),
+    'lightblues'  = colors_sig("light blue - darker", "light blue", "light blue - lighter"),
     'highlight'   = colors_sig("light blue", "red"),
     'intense'     = colors_sig("yellow", "orange", "red")
   )
