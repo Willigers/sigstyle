@@ -38,9 +38,10 @@ Available palettes:
 \itemize{
 \item \code{"postoneg"} – green (positive), white (neutral), and red (negative).
 \item \code{"mintoplus"} – blue (low), white (neutral), and red (high).
-\item \code{"blues"} – white (low) to blue (high).
-\item \code{"white2lightblues"} – white (low) to light blue (high).
+\item \code{"white2blue"} – white (low) to blue (high).
+\item \code{"white2lightblue"} – white (low) to light blue (high).
 \item \code{"lightblues"} – light blue - lighter (low), light blue (mid), and light blue - darker (high).
+\item \code{"blues"} – blue - lighter (low), blue (mid), and blue - darker (high).
 \item \code{"intense"} – yellow (low), orange (mid), and red (high).
 }
 

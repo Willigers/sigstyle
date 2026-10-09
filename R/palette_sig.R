@@ -23,9 +23,10 @@
 #'
 #' * `"postoneg"` – green (positive), white (neutral), and red (negative).
 #' * `"mintoplus"` – blue (low), white (neutral), and red (high).
-#' * `"blues"` – white (low) to blue (high).
-#' * `"white2lightblues"` – white (low) to light blue (high).
+#' * `"white2blue"` – white (low) to blue (high).
+#' * `"white2lightblue"` – white (low) to light blue (high).
 #' * `"lightblues"` – light blue - lighter (low), light blue (mid), and light blue - darker (high).
+#' * `"blues"` – blue - lighter (low), blue (mid), and blue - darker (high).
 #' * `"intense"` – yellow (low), orange (mid), and red (high).
 #'
 #' **Highlighting palette**
@@ -62,21 +63,27 @@ palette_sig <- function(palette = "all", n = 0) {
   # Define palettes from Significance style colors
   pal_sig <- list(
     'all'         = colors_sig("light blue", "blue", "yellow", "orange", "red", "green",
-                              "light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter",
-                              "light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker"),
+                              "light blue - lighter", "blue - lighter", "yellow - lighter", 
+                              "orange - lighter", "red - lighter", "green - lighter",
+                              "light blue - darker", "blue - darker", "yellow - darker", 
+                              "orange - darker", "red - darker", "green - darker"),
     'main'        = colors_sig("light blue", "blue", "yellow", "orange", "red", "green"),
-    'lighter'     = colors_sig("light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter"),
+    'lighter'     = colors_sig("light blue - lighter", "blue - lighter", "yellow - lighter", 
+                               "orange - lighter", "red - lighter", "green - lighter"),
     'light'       = colors_sig("light blue", "blue", "yellow", "orange", "red", "green",
-                               "light blue - lighter", "blue - lighter", "yellow - lighter", "orange - lighter", "red - lighter", "green - lighter"),
-    'darker'      = colors_sig("light blue - darker", "blue - darker", "yellow - darker", "orange - darker", "red - darker", "green - darker"),
+                               "light blue - lighter", "blue - lighter", "yellow - lighter",
+                               "orange - lighter", "red - lighter", "green - lighter"),
+    'darker'      = colors_sig("light blue - darker", "blue - darker", "yellow - darker", 
+                               "orange - darker", "red - darker", "green - darker"),
     'basic'       = colors_sig("light blue", "blue"),
     'posneg'      = colors_sig("green", "red"),
     'posnegneut'  = colors_sig("green", "red", "light blue"),
     'postoneg'    = colors_sig("green", "white", "light blue"),
     'mintoplus'   = colors_sig("blue", "white", "red"),
-    'blues'       = colors_sig("white", "light blue - lighter", "blue"),
+    'white2blue'  = colors_sig("white", "light blue - lighter", "blue"),
     'white2lightblue' = colors_sig("white", "light blue"),
-    'lightblues'  = colors_sig("light blue - darker", "light blue", "light blue - lighter"),
+    'blues'       = colors_sig("blue - lighter", "blue", "blue - darker"),
+    'lightblues'  = colors_sig("light blue - lighter", "light blue", "light blue - darker"),
     'highlight'   = colors_sig("light blue", "red"),
     'intense'     = colors_sig("yellow", "orange", "red")
   )
