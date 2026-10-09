@@ -1,12 +1,14 @@
 #' Significance ggplot2 theme for maps
 #'
 #' Defines the theme for ggplot2 plots. This includes fonts, margins, etc.
+#' This version has no grid lines, which is useful for maps or for other plots where grid lines are not desired. 
 #'
 #' @keywords theme
 #'
 #' @return Theme to be used for ggplot2 plots
 #'
 #' @examples
+#' # Basic plot
 #' mtcars %>%
 #'   ggplot(aes(gear)) +
 #'     geom_bar() +
@@ -15,6 +17,20 @@
 #'          title="Car types"
 #'     ) +
 #'     theme_sig_map()
+#' 
+#' # Map
+#' library(sf)
+#' nc <- st_read(system.file("shape/nc.shp", package = "sf"), quiet = TRUE)
+#' ggplot(nc) +
+#'     geom_sf(aes(fill = BIR74), color = "black", linewidth = 0.2) +
+#'     labs(
+#'         title = "North Carolina Counties - Births in 1974",
+#'         subtitle = "Data from 'sf' package",
+#'         caption = "Source: US Census (via sf)"
+#'     ) +
+#'     theme_sig_map() +
+#'     theme(legend.position = "right") +
+#'     scale_fill_sig("white2blue", discrete = "false")
 #'
 #' @export
 theme_sig_map <- function(){
